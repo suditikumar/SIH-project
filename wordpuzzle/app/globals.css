@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg-canvas: #F5F7F4;
+  --color-bg-card: #FFFFFF;
+  --color-bg-subtle: #EBF1EC;
+  --color-text-primary: #18281E;
+  --color-text-muted: #496352;
+  --color-brand-primary: #2C5E3B;
+  --color-brand-light: #418255;
+  --color-brand-soft: #D7EAD9;
+  --color-accent-warm: #C86938;
+  --color-accent-soft: #FCEFE8;
+  --color-accent-sun: #D99518;
+  --color-border-subtle: #D5E0D7;
+  --color-border-bold: #2C5E3B;
+  --base-font-size: 19px;
+}
+
+/* Accessible Font Sizes */
+html.font-size-normal {
+  --base-font-size: 19px;
+}
+
+html.font-size-large {
+  --base-font-size: 23px;
+}
+
+html.font-size-xlarge {
+  --base-font-size: 27px;
+}
+
+/* High Contrast Mode */
+html.high-contrast {
+  --color-bg-canvas: #0D1611;
+  --color-bg-card: #18251D;
+  --color-bg-subtle: #22352A;
+  --color-text-primary: #FFFFFF;
+  --color-text-muted: #E2ECE5;
+  --color-brand-primary: #F7D046;
+  --color-brand-light: #FFE585;
+  --color-brand-soft: #2E4535;
+  --color-accent-warm: #FFA066;
+  --color-accent-soft: #382419;
+  --color-accent-sun: #FFD54F;
+  --color-border-subtle: #63846F;
+  --color-border-bold: #F7D046;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html.reduce-motion *, 
+html.reduce-motion ::before, 
+html.reduce-motion ::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+html {
+  font-size: var(--base-font-size);
+}
+
+body {
+  background-color: var(--color-bg-canvas);
+  color: var(--color-text-primary);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans Bengali', 'Noto Sans Devanagari', sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Elderly Focus Ring */
+:focus-visible {
+  outline: 4px solid #2C5E3B;
+  outline-offset: 3px;
+}
+
+html.high-contrast :focus-visible {
+  outline: 4px solid #F7D046;
+  outline-offset: 4px;
+}
+
+/* Smooth Large Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-subtle);
+}
+::-webkit-scrollbar-thumb {
+  background: #7B9B84;
+  border-radius: 6px;
+}
+
